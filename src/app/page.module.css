@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #2D1C2D;
+  background-image: linear-gradient(to right bottom, #2d1c2d, #281a28, #231823, #1e151f, #1a131a, #191219, #181218, #171117, #1a131a, #1d141d, #20151f, #231622);
   width: 100vw;
   height: 100vh;
 }
