@@ -42,9 +42,9 @@ export default function Home() {
       </div>
     </div>)
   }
-  function FirstContentButtom() {
-    // return()
-  }
+  // function FirstContentButtom() {
+  //   return()
+  // }
   function SecondContent() {
     return (<div id='secondContent' className={styles.secondContent}>
       <div className={styles.secondContentTop}>
