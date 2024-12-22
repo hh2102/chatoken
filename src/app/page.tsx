@@ -29,6 +29,14 @@ export default function Home() {
       </div>
     )
   }
+  function FirstContent() {
+    return (
+      <div className={styles.firstContent}>
+        <Image src="/ChaToken.png" width={369} height={80} alt="ChaToken" className={styles.topLogo} />
+        <TopButtonGroup />
+      </div>
+    )
+  }
   function MiddleContent() {
     return (<div className={styles.backgroundLineContent}>
       <div className={styles.middleContent}>
@@ -93,8 +101,8 @@ export default function Home() {
 
   return (
     <div className={styles.page} >
-      <Image src="/ChaToken.png" width={369} height={80} alt="ChaToken" className={styles.topLogo} />
-      <TopButtonGroup />
+
+      <FirstContent />
       <MiddleContent />
       <SecondContent />
       <BottomDivider />

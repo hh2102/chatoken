@@ -15,23 +15,32 @@
     --button-secondary-hover: #1a1a1a;
   }
 } */
- .topButtonGroup{
+ .firstContent{
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+ }
+.topButtonGroup {
 	position: absolute;
 	right: 15vw;
 	top: 27px;
-
- }
+}
 .topButtonLeft {
+	width: 7vw;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 	user-select: none;
 	cursor: pointer;
+	object-fit: contain;
 }
 .topButtonLeft:active {
 	transform: scale(0.98);
 	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.199);
 }
-.topButtonRight{
-  margin-left: 27px;
+.topButtonRight {
+	width: 6.8vw;
+	object-fit: contain;
+
+	margin-left: 27px;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 	user-select: none;
 	cursor: pointer;
@@ -96,14 +105,16 @@
 	position: absolute;
 	top: 15px;
 	left: 15vw;
+	object-fit: contain;
+	width: 15vw;
 }
 
 .secondContent {
 	width: 100vw;
 	height: 150vh;
-	position: absolute;
+	/* position: absolute;
 	top: 100vh;
-	left: 0;
+	left: 0; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -115,7 +126,8 @@
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	margin-top: 15vh;
+	height: 50vh;
+	/* margin-top: 15vh; */
 }
 .secondContentMiddle {
 	display: flex;
@@ -123,7 +135,9 @@
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	margin-top: 15vh;
+	height: 50vh;
+
+	/* margin-top: 15vh; */
 }
 .secondContentBottom {
 	display: flex;
@@ -131,40 +145,54 @@
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	margin-top: 15vh;
+	height: 50vh;
+
+	/* margin-top: 15vh; */
 }
 
 .secondTextLeftTop {
 	margin-right: 10vw;
+	object-fit: contain;
+	width: 25vw;
 }
 .secondTextRightTop {
+	object-fit: contain;
+	width: 25vw;
 }
 
 .secondLeftMiddle {
+	object-fit: contain;
+	width: 25vw;
 	margin-right: 3vw;
 }
 .secondTextRightMiddle {
+	object-fit: contain;
+	width: 40vw;
 }
 .secondTextLeftBottom {
+	object-fit: contain;
+	width: 40vw;
 }
 .secondRightBottom {
+	object-fit: contain;
+	width: 25vw;
 	margin-left: 7vw;
 }
 .bottomDivider {
 	width: 100vw;
 	height: 2px;
 	background-color: #454545;
-	position: absolute;
-	top: 260vh;
+	/* position: absolute;
+	top: 260vh; */
 }
 .thirdContent {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	top: 260vh;
+	/* position: absolute;
+	top: 260vh; */
 	width: 100vw;
-	height: 40vh;
+	height:50vh;
 }
 .thirdContentText {
 }
