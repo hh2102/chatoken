@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 import Image from "next/image";
 import styles from "./page.module.css";
+import { sendGAEvent } from '../../components/GoogleAnalytics';
 
 
 
@@ -17,10 +18,19 @@ function scrollToNextSection(nextSectionId: string) {
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(1);
+  /**
+   * 
+   * @returns 顶部右侧按钮组
+   */
   function TopButtonGroup() {
     return (
       <div className={styles.topButtonGroup}>
         <Image src="/topButtonLeft.png" width={168} height={56} alt="All funds" className={styles.topButtonLeft} onClick={() => {
+          sendGAEvent("test1", {
+            "title1": "hellow",
+            "title2": "success",
+            "value": 1
+          })
           alert("all funds")
         }} />
         <Image src="/topButtonRight.png" width={178} height={56} alt="Buy now" className={styles.topButtonRight} onClick={() => {
@@ -29,6 +39,10 @@ export default function Home() {
       </div>
     )
   }
+  /**
+   * 
+   * @returns 第一页面容器
+   */
   function FirstContent() {
     return (
       <div className={styles.firstContent}>
@@ -37,6 +51,10 @@ export default function Home() {
       </div>
     )
   }
+  /**
+   * 
+   * @returns 第一页面中部容器
+   */
   function MiddleContent() {
     return (<div className={styles.backgroundLineContent}>
       <div className={styles.middleContent}>
@@ -53,6 +71,10 @@ export default function Home() {
   // function FirstContentButtom() {
   //   return()
   // }
+  /**
+   * 
+   * @returns 第二页面容器
+   */
   function SecondContent() {
     return (<div id='secondContent' className={styles.secondContent}>
       <div className={styles.secondContentTop}>
@@ -72,12 +94,20 @@ export default function Home() {
       </div>
     </div>)
   }
+  /**
+   * 
+   * @returns 底部分割线 
+   */
   function BottomDivider() {
     return (<div className={styles.bottomDivider}>
 
     </div>)
   }
-  function ButtomContent() {
+  /**
+   * 
+   * @returns 第三页面容器
+   */
+  function ThirdContent() {
     return (<div className={styles.thirdContent}>
       <Image src="/bottomText.png" width={735} height={186} alt='MoonMeen Fund' className={styles.thirdContentText}></Image>
       <div className={styles.thirdContentButton} onClick={() => {
@@ -106,7 +136,7 @@ export default function Home() {
       <MiddleContent />
       <SecondContent />
       <BottomDivider />
-      <ButtomContent />
+      <ThirdContent />
     </div>
   );
 }
