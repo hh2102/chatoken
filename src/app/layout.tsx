@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "First Next.js Test Proj",
-  description: "第一次测试",
+  title: "ChaToken",
+  description: "The World’s First Meme Fund for Everyone.",
 };
 
 export default function RootLayout({
