@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Image from "next/image";
 import styles from "./page.module.css";
 import { sendGAEvent } from '../../components/GoogleAnalytics';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 
@@ -18,6 +19,7 @@ function scrollToNextSection(nextSectionId: string) {
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(1);
+  const notify = () => { toast.error("服务器链接失败") }
   /**
    * 
    * @returns 顶部右侧按钮组
@@ -26,15 +28,16 @@ export default function Home() {
     return (
       <div className={styles.topButtonGroup}>
         <Image src="/topButtonLeft.png" width={168} height={56} alt="All funds" className={styles.topButtonLeft} onClick={() => {
-          sendGAEvent("test1", {
-            "title1": "hellow",
-            "title2": "success",
-            "value": 1
+          sendGAEvent("cha token test", {
+            "position": "Top Button Group Left"
           })
-          alert("all funds")
+          notify()
         }} />
         <Image src="/topButtonRight.png" width={178} height={56} alt="Buy now" className={styles.topButtonRight} onClick={() => {
-          alert("buy now")
+          notify()
+          sendGAEvent("cha token test", {
+            "position": "Top Button Group Right"
+          })
         }} />
       </div>
     )
@@ -72,7 +75,10 @@ export default function Home() {
           </div>
         </div>
         <div id='middleButton' onClick={() => {
-          alert("middleButton")
+          sendGAEvent("cha token test", {
+            "position": "Middle Button"
+          })
+          notify()
         }} className={`${styles.middleButton}`}>
           Secure Your Spot
         </div>
@@ -150,10 +156,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* <Image src="/bottomText.png" width={735} height={186} alt='MoonMeen Fund' className={styles.thirdContentText}></Image> */}
       <div className={styles.thirdContentButton} onClick={() => {
-        alert("bottomButton")
+        sendGAEvent("cha token test", {
+          "position": "Bottom Button"
+        })
+        notify()
       }}>Secure Your Spot</div>
     </div>)
   }
@@ -173,7 +180,7 @@ export default function Home() {
 
   return (
     <div className={styles.page} >
-
+      <ToastContainer />
       <FirstContent />
       <MiddleContent />
       <FirstContentButtom />
