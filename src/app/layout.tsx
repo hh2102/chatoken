@@ -27,14 +27,14 @@ export default function RootLayout({
   return (
     <html lang="cn">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
         <Suspense fallback={<div>Loading...</div>}>
           <GoogleAnalytics />
           {children}
           <Script
-          src="https://widgets.coingecko.com/gecko-coin-list-widget.js"
+          src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"
           strategy="afterInteractive"
         />
+        
         </Suspense>
       </body>
     </html>

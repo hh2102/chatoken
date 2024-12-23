@@ -58,8 +58,19 @@ export default function Home() {
   function MiddleContent() {
     return (<div className={styles.backgroundLineContent}>
       <div className={styles.middleContent}>
-        <Image src="/middleTextTop.png" width={647} height={97} alt="MoonMeen Fund" className={styles.middleTextTop} />
-        <Image src="/middleTextBottom.png" width={735} height={44} alt="The World’s First Meme Fund for Everyone." className={styles.middleTextBottom} />
+        <div className={styles.middleTextTopContent}>
+          <div className={styles.middleTextTopLeft}>
+            MoonMeen
+          </div>
+          <div className={styles.middleTextTopRight}>
+            Fund
+          </div>
+        </div>
+        <div className={styles.middleTextBottomContent}>
+          <div className={styles.middleTextBottom}>
+            The World’s First Meme Fund for Everyone.
+          </div>
+        </div>
         <div id='middleButton' onClick={() => {
           alert("middleButton")
         }} className={`${styles.middleButton}`}>
@@ -68,9 +79,16 @@ export default function Home() {
       </div>
     </div>)
   }
-  // function FirstContentButtom() {
-  //   return()
-  // }
+  /**
+   * 
+   * @returns 第一页面底部跑马灯
+   */
+  function FirstContentButtom() {
+    return (
+      <div>
+        <gecko-coin-price-marquee-widget locale="en" dark-mode="true" coin-ids="limitus,pudgy-penguins,hyperliquid,odos" initial-currency="usd"></gecko-coin-price-marquee-widget>
+      </div>)
+  }
   /**
    * 
    * @returns 第二页面容器
@@ -78,19 +96,29 @@ export default function Home() {
   function SecondContent() {
     return (<div id='secondContent' className={styles.secondContent}>
       <div className={styles.secondContentTop}>
-        <Image src="/secondTextLeftTop.png" width={522} height={318} alt='Meme Coin Marketcap' className={styles.secondTextLeftTop}></Image>
-        <Image src="/secondTextRightTop.png" width={491} height={318} alt='Fundraising Progress' className={styles.secondTextRightTop}></Image>
 
+        <div className={styles.secondTextLeftTopContent}>
+          <div className={styles.secondTextLeftTopTop}>Meme Coin Marketcap</div>
+          <div className={styles.secondTextLeftTopMiddle}>110%+</div>
+          <div className={styles.secondTextLeftTopBottom}>growth in the last 30d</div>
+        </div>
+        <div className={styles.secondTextRightTopContent}>
+          <div className={styles.secondTextRightTopTop}>Fundraising Progress</div>
+          <div className={styles.secondTextRightTopMiddle}>64%</div>
+          <div className={styles.secondTextRightTopBottom}>spot has been claimed</div>
+        </div>
       </div>
       <div className={styles.secondContentMiddle}>
         <Image src="/secondLeftMiddle.png" width={568} height={568} alt='Meme Coin' className={styles.secondLeftMiddle}></Image>
-        <Image src="/secondTextRightMiddle.png" width={747} height={264} alt='Meme Coin' className={styles.secondTextRightMiddle}></Image>
-
+        <div className={styles.secondTextRightMiddle}>
+          MoonMeme Fund is the world’s first publicly accessible meme-focused investment fund. Now, everyone can join the meme token revolution and share in the profits of this thriving market.
+        </div>
       </div>
       <div className={styles.secondContentBottom}>
-        <Image src="/secondTextLeftBottom.png" width={747} height={264} alt='Meme Coin' className={styles.secondTextLeftBottom}></Image>
+        <div className={styles.secondTextLeftBottom}>
+          With no minimum investment required, you can secure your spot today using either card or crypto. The fund launches as soon as we hit our $10M target—don’t miss your chance to be part of this groundbreaking opportunity!
+        </div>
         <Image src="/secondRightBottom.png" width={450} height={450} alt='Meme Coin' className={styles.secondRightBottom}></Image>
-
       </div>
     </div>)
   }
@@ -99,9 +127,7 @@ export default function Home() {
    * @returns 底部分割线 
    */
   function BottomDivider() {
-    return (<div className={styles.bottomDivider}>
-
-    </div>)
+    return (<div className={styles.bottomDivider}></div>)
   }
   /**
    * 
@@ -109,7 +135,23 @@ export default function Home() {
    */
   function ThirdContent() {
     return (<div className={styles.thirdContent}>
-      <Image src="/bottomText.png" width={735} height={186} alt='MoonMeen Fund' className={styles.thirdContentText}></Image>
+      <div className={styles.thirdTextContent}>
+        <div className={styles.thirdTextTopContent}>
+          <div className={styles.thirdTextTopLeft}>
+            MoonMeen
+          </div>
+          <div className={styles.thirdTextTopRight}>
+            Fund
+          </div>
+        </div>
+        <div className={styles.thirdTextBottomContent}>
+          <div className={styles.thirdTextBottom}>
+            The World’s First Meme Fund for Everyone.
+          </div>
+        </div>
+      </div>
+
+      {/* <Image src="/bottomText.png" width={735} height={186} alt='MoonMeen Fund' className={styles.thirdContentText}></Image> */}
       <div className={styles.thirdContentButton} onClick={() => {
         alert("bottomButton")
       }}>Secure Your Spot</div>
@@ -134,6 +176,7 @@ export default function Home() {
 
       <FirstContent />
       <MiddleContent />
+      <FirstContentButtom />
       <SecondContent />
       <BottomDivider />
       <ThirdContent />
